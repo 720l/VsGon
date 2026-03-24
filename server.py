@@ -4,7 +4,8 @@ import google.generativeai as genai
 app = Flask(__name__)
 
 genai.configure(api_key="API_KEY")
-
+if api_key is None:
+    raise ValueError("API_KEY 환경 변수가 설정되지 않았습니다.")
 # 🔥 최신 안정 모델
 model = genai.GenerativeModel("gemini-2.5-flash")
 
