@@ -5,9 +5,17 @@ import os
 import aiohttp
 import re
 
-TOKEN = os.environ.get("Discord TOKEN")
-SERVER_URL = "http://127.0.0.1:5001/chat"
 
+def main():
+    TOKEN = os.environ.get("Discord_TOKEN")  # 실행 시점에만 가져오기
+    if TOKEN is None:
+        raise ValueError("Discord_TOKEN 환경 변수가 설정되지 않았습니다.")
+
+    # bot.py 기존 코드 전체를 여기에 포함
+    # client.run(TOKEN)까지 모두 포함
+
+if __name__ == "__main__":
+    main()
 
 intents = discord.Intents.default()
 intents.message_content = True
